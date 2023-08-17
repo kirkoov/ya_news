@@ -26,5 +26,3 @@ htmlcov/
 coverage.xml
 *.cover
 
-*.sh
-
