@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "ya-news"
+version = "0.1.0"
+description = "A ssample app to try testing approaches on (YaPracticum)."
+authors = ["Кирилл Кувшинов <k.koovshinov@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "ya_news"}]
+
+[tool.poetry.dependencies]
+python = "^3.9.10"
+asgiref = "3.7.2"
+django = "3.2.15"
+pytz = "2023.3"
+sqlparse = "0.4.4"
+typing-extensions = "4.7.1"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.5.1"
+django-stubs = "^4.2.3"
+flake8 = "^6.1.0"
+ruff = "^0.0.285"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
