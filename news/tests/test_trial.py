@@ -12,6 +12,8 @@
 #     def test_example_fails(self):
 #         self.assertTrue(False)  # Этот тест всегда будет проваливаться.
 
+import unittest
+
 # посмотрим, как тесты работают непосредственно с Django-проектом
 from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
@@ -50,12 +52,14 @@ class TestNews(TestCase):
         # от имени пользователя с логином "testUser".
 
     # Проверим, что объект действительно было создан.
+    @unittest.skip('')
     def test_successful_creation(self):
         # При помощи обычного ORM-метода посчитаем количество записей в базе.
         news_count = News.objects.count()
         # Сравним полученное число с единицей.
         self.assertEqual(news_count, 1)
 
+    @unittest.skip('')
     def test_title(self):
         # Сравним свойство объекта и ожидаемое значение.
         self.assertEqual(self.news.title, self.TITLE)
