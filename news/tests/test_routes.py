@@ -23,16 +23,6 @@ class TestRoutes(TestCase):
             text='Текст комментария'
         )
 
-    # def test_home_page(self):
-    #     url = reverse('news:home')
-    #     response = self.client.get(url)
-    #     self.assertEqual(response.status_code, HTTPStatus.OK)
-
-    # def test_detail_page(self):
-    #     url = reverse('news:detail', args=(self.news.id,))
-    #     response = self.client.get(url)
-    #     self.assertEqual(response.status_code, HTTPStatus.OK)
-
     def test_pages_availability(self):
         urls = (
             ('news:home', None),
