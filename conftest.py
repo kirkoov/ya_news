@@ -4,7 +4,6 @@ from news.models import Comment, News
 
 
 @pytest.fixture
-# Используем встроенную фикстуру для модели пользователей django_user_model.
 def author(django_user_model):
     return django_user_model.objects.create(username='Автор')
 
@@ -26,7 +25,6 @@ def news():
 
 @pytest.fixture
 def news_id_for_args(news):
-    # И возвращает кортеж, который содержит id новости.
     return news.id,
 
 

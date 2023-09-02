@@ -69,7 +69,6 @@ def test_pages_availability_for_different_users(
 @pytest.mark.django_db
 def test_redirects(client, name, comment_object):
     login_url = reverse('users:login')
-    # Формируем URL в зависимости от того, передан ли объект заметки:
     url = reverse(name, args=(comment_object.id,))
     expected_url = f'{login_url}?next={url}'
     response = client.get(url)
