@@ -46,3 +46,11 @@ def test_news_comment_form_for_different_users(
     url = reverse('news:detail', args=(news.id,))
     response = parametrized_client.get(url)
     assert ('form' in response.context) is note_in_list
+
+
+# Автору комментария доступна форма редактирования своего комментария
+def test_news_comment_edit_form_for_author(
+        author_client, news, comment):
+    url = reverse('news:edit', args=(comment.id,))
+    response = author_client.get(url)
+    assert 'form' in response.context
