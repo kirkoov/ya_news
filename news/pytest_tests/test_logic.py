@@ -7,7 +7,7 @@ from pytest_django.asserts import assertRedirects, assertFormError
 from django.urls import reverse
 
 from news.forms import BAD_WORDS, WARNING
-from news.models import Comment, News
+from news.models import Comment
 
 
 # Анонимный пользователь не может отправить комментарий.
@@ -33,7 +33,7 @@ def test_user_can_create_comment(author_client, author, form_data, news):
 
 
 # Если комментарий содержит запрещённые слова, он не будет опубликован, а форма
-# +вернёт ошибку.
+# вернёт ошибку.
 def test_user_cant_use_bad_words(admin_client, news):
     url = reverse('news:detail', args=(news.id,))
     bad_words_data = {'text': f'Какой-то текст, {BAD_WORDS[0]}, еще текст'}
